@@ -1,4 +1,6 @@
-import { Controller, Get, Post, Body, Render } from '@nestjs/common';
+import { Controller, Get, Post, Body, Render, UseGuards } from '@nestjs/common';
+import { DummyUserData } from 'src/user/dummy-user-data';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller()
 export class SiteController {
@@ -12,12 +14,12 @@ export class SiteController {
   @Render('login-form')
   loginForm(): object {
     return {
-        username: 'bob',
-        password: 'password',
+      ...DummyUserData,
     };
   }
 
   @Post('login')
+  @UseGuards(AuthGuard('local'))
   login(@Body() body) {
     return JSON.stringify(body);
   }
