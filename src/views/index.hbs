@@ -1,3 +1,10 @@
 {{#> layout }}
 <h1 class="text-primary">Home Page</h1>
+{{#if isLoggedIn}}
+<h3 class="text-success">You are logged in.</h3>
+{{else}}
+<div>
+    <a href="/login" class="btn btn-info">login</a>
+</div>
+{{/if}}
 {{/layout}}

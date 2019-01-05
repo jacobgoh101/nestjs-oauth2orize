@@ -1,27 +1,28 @@
-import { Controller, Get, Post, Body, Render, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Render, Query, Req } from '@nestjs/common';
 import { DummyUserData } from 'src/user/dummy-user-data';
-import { AuthGuard } from '@nestjs/passport';
+import { Request } from 'express';
 
 @Controller()
 export class SiteController {
   @Get()
   @Render('index')
-  index(): object {
-    return {};
+  index(@Req() req: Request): object {
+    return { isLoggedIn: !!req.user };
   }
 
   @Get('login')
   @Render('login-form')
-  loginForm(): object {
+  loginForm(@Query() query): object {
+    const { error } = query;
     return {
       ...DummyUserData,
+      error: error !== undefined,
     };
   }
 
   @Post('login')
-  @UseGuards(AuthGuard('local'))
-  login(@Body() body) {
-    return JSON.stringify(body);
+  login() {
+    return;
   }
 
   @Get('logout')
