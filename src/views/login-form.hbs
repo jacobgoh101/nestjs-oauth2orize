@@ -1,0 +1,26 @@
+{{#> layout }}
+<div class="row pt-5 ">
+    <div class="col-md-6 offset-3">
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="username">username</label>
+                <input type="text" class="form-control" id="username">
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="password" class="form-control" id="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <b>For Demo:</b>
+            <br>
+            username: {{username}}
+            <br>
+            password: {{password}}
+        </form>
+    </div>
+</div>
+{{/layout}}
