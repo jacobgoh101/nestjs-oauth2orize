@@ -1,6 +1,6 @@
-import { Controller, Get, Post, Render, Query, Req } from '@nestjs/common';
+import { Controller, Get, Post, Render, Query, Req, Res } from '@nestjs/common';
 import { DummyUserData } from 'src/user/dummy-user-data';
-import { Request } from 'express';
+import { Request, Response } from 'express';
 
 @Controller()
 export class SiteController {
@@ -26,8 +26,9 @@ export class SiteController {
   }
 
   @Get('logout')
-  logout() {
-    return null;
+  logout(@Req() req: Request, @Res() res: Response) {
+    req.logout();
+    res.redirect('/');
   }
 
   @Get('account')

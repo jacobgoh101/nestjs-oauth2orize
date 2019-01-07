@@ -2,6 +2,8 @@
 <h1 class="text-primary">Home Page</h1>
 {{#if isLoggedIn}}
 <h3 class="text-success">You are logged in.</h3>
+<br><br>
+<a href="/logout" class="btn btn-danger">logout</a>
 {{else}}
 <div>
     <a href="/login" class="btn btn-info">login</a>
