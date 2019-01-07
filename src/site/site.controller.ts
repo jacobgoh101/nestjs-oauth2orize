@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Render, Query, Req, Res } from '@nestjs/common';
-import { DummyUserData } from 'src/user/dummy-user-data';
+import { DummyUserData } from 'src/dummy.data';
 import { Request, Response } from 'express';
 
 @Controller()

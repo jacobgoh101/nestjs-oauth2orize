@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { UserEntity } from '../user.entity';
 import { UserDTO } from '../user.dto';
-import { DummyUserData } from '../dummy-user-data';
+import { DummyUserData } from '../../dummy.data';
 import * as _ from 'lodash';
 
 @Injectable()
