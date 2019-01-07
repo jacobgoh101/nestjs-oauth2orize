@@ -76,6 +76,13 @@
     "@types/connect" "*"
     "@types/node" "*"
 
+"@types/connect-ensure-login@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@types/connect-ensure-login/-/connect-ensure-login-0.1.4.tgz#6bfb5d5a3a273b08c15ceb00620ab14f8bf06244"
+  integrity sha512-MLXOS6+5MnhkB7F34xE66wX9MEEfrUJRfNM9Uv0vEre8kH13tILO9j2b7fI4xwyLXSEn9k3uIE8U46MQ1CWByw==
+  dependencies:
+    "@types/express" "*"
+
 "@types/connect@*":
   version "3.4.32"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.32.tgz#aa0e9616b9435ccad02bc52b5b454ffc2c70ba28"
@@ -1049,6 +1056,11 @@ configstore@^3.0.0:
     unique-string "^1.0.0"
     write-file-atomic "^2.0.0"
     xdg-basedir "^3.0.0"
+
+connect-ensure-login@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/connect-ensure-login/-/connect-ensure-login-0.1.1.tgz#174dcc51243b9eac23f8d98215aeb6694e2e8a12"
+  integrity sha1-F03MUSQ7nqwj+NmCFa62aU4uihI=
 
 consola@^1.4.3:
   version "1.4.5"

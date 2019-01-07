@@ -1,6 +1,7 @@
 import { Module, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { SiteController } from './site.controller';
 import passport = require('passport');
+import { ensureLoggedIn } from 'connect-ensure-login';
 
 @Module({
   controllers: [SiteController],
@@ -15,6 +16,11 @@ export class SiteModule {
         }),
       )
       .forRoutes({ path: 'login', method: RequestMethod.POST });
+
+    consumer
+      .apply(ensureLoggedIn())
+      .forRoutes({ path: 'account', method: RequestMethod.GET });
+
     return;
   }
 }

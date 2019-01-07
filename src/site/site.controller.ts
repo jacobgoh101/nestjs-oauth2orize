@@ -33,6 +33,6 @@ export class SiteController {
 
   @Get('account')
   account() {
-    return null;
+    return `a sample protected 'my account' page`;
   }
 }
